@@ -178,6 +178,43 @@ cat ~/.ssh/id_ed25519.pub
 6. In the "Key" field, paste your public key.
 7. Click Add SSH key.
 
+### Test the connection
+
+Try the following command:
+
+```bash
+ssh -T git@github.com
+```
+
+If you see this error message:
+
+```bash
+> ssh: connect to host github.com port 22: Connection timed out
+```
+
+type ```sudo nano ~/.ssh/config```, add the following lines and retry the first command:
+
+```bash
+Host github.com
+Hostname ssh.github.com
+Port 443
+```
+
+You may see a warning like this:
+
+```bash
+> The authenticity of host 'github.com (IP ADDRESS)' can't be established.
+> ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+> Are you sure you want to continue connecting (yes/no)?
+```
+
+Answer yes and type your passphrase if requested. The success message should look like this:
+
+```bash
+> Hi USERNAME! You've successfully authenticated, but GitHub does not
+> provide shell access.
+```
+
 ## 📦 Node.js and NPM
 
 Node and NPM should be already installed in Ubuntu but the version is really old (older than patek V6) and we may need to be able to switch easily between Node versions. That's why we'll use [NVM](https://github.com/nvm-sh/nvm).
