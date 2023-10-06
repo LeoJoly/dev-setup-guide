@@ -245,3 +245,13 @@ You can test that everything work with these two commands:
 node -v
 npm -v
 ```
+
+## 💻 Visual Studio Code
+
+### Installation
+
+You can download the latest Windows installer [here](https://code.visualstudio.com/). I recommend using the stable build.
+
+### Changing the Default Shell
+
+The WSL2 shell can be chosen as the default VS Code terminal by pressing ```Ctrl + Shift + P``` and typing/choosing Terminal: Select Default Profile, then selecting Ubuntu (Wsl).
